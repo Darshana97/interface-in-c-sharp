@@ -12,11 +12,21 @@ namespace @interface
         void Print();
     }
 
-    class Customer : ICustomer
+    interface I2
+    {
+        void I2Method();
+    }
+
+    class Customer : ICustomer,I2
     {
         public void Print()
         {
             Console.WriteLine("Interface Print method");
+        }
+
+        public void I2Method()
+        {
+            Console.WriteLine("I2 method");
         }
     }
 
@@ -27,6 +37,7 @@ namespace @interface
 
             Customer C1 = new Customer();
             C1.Print();
+            C1.I2Method();
             Console.ReadLine();
 
         }
